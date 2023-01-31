@@ -15,83 +15,16 @@
 #include <vector>
 using namespace std;
 
-
-/*void gamesetting(int br, int bc, int zc)
+void trylol(vector<int> &vec)
 {
-    
-    cout<< "Board Rows"    << setw(6) << " :" <<br << endl
-        << "Board Columns" << setw(3) << " :" <<bc << endl
-        << "Zombie Count"  << setw(4) << " :" <<zc << endl;
-
-}
-
-int finalsetting(int row, int columns)
-{
-    //return pf::CreateGameBoard();
-    return 0;
+    vec[0] = vec[0] * 20;
+    vec[1] = vec[1] * 30;
 }
 
 int main()
 {
-    /*cout << "Assignment (Part 1)" << endl;
-    cout << "Let's Get Started!" << endl; 
-
-    cout << "DEFAULT GAME SETTING" << endl;
-    cout << "--------------------" << endl;
-    gamesetting(3,5,1);
-
-    char ans;
-    cout << "Do you wish to change the game setting (y/n)?";
-    cin >> ans; ans = toupper(ans);
-
-    pf::ClearScreen();
-
-    int count = 1, nrows, ncolumns, nzombies;
-    if(ans == 'Y')
-    {
-        int count1 = 1;
-        while(count1 > 0)
-        {   cout << "Board Setting\n------------" << endl;
-            cout << "Enter rows ==>  ";
-            cin >> nrows;
-            cout << "Enter columns ==>  ";
-            cin >> ncolumns;
-
-            cout << "Zombie Setting\n--------------" << endl;
-            cout << "Enter the number of zombies ==> ";
-            cin >> nzombies;
-
-            if (nrows > 4 && nrows < 16 && ncolumns > 9 && ncolumns < 26 && nzombies > 0 && nzombies < 6)
-            {
-                    pf::ClearScreen();
-                    count1 = 0;
-            }
-            else
-            {
-                    cout << "Please re-enter a valid range" << endl;
-                    pf:: Pause();
-                    pf::ClearScreen();
-                    continue;
-            }
-        }
-        cout << "Game setting has been updated" << endl;
-        pf::Pause();
-
-    }
-    else
-    {
-        cout << "Press to continue" << endl;
-        pf::Pause();
-    }
-    
-}*/
-
-int main()
-{   
-    srand(time(NULL));
-    int grows = 3; int gcolumns = 15;
-    int y = rand() % grows; int x = rand() % gcolumns;
-    cout << y << endl << x;
-    
+    vector<int> v;
+    v[0]= 4; v[1]=2;
+    trylol(v);
+    cout << v[0] << " " << v[1] << endl;
 }
-
