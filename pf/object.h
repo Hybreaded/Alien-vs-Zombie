@@ -1,26 +1,18 @@
 #ifndef PF_OBJECT_H
 #define PF_OBJECT_H
 #include <vector>
-using namespace std;
 
 class Object
 {
     public:
-    int alienhealth;
-    vector<vector<char>> temp;
-    
-    int healthpack(Object& object1);
-    void pod(Object& object1);
-    void rock(Object& object1);
+    int healthpack(int& AlienLife);
+    void pod(/*vector<vector<char>>& game_,*/ int totalrows, int totalcolumns, int totalzombies,
+            int& zombie1Life, int& zombie2Life, int& zombie3Life, int& zombie4Life, int& zombie5Life);
+    void rock();
     void moveup();
     void movedown();
     void moveleft();
     void moveright();
-
-    private:
-    int healthpack_ = 20;
-    int zombierange_ = 3;
-
 };
 
 #endif

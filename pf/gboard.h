@@ -9,7 +9,7 @@ class Gboard
     public:
     int numeoflements;
     int grows, gcolumns, gzombies;
-    std::vector<std::vector<char>> board_;
+    std::vector<std::vector<char>> board_; // a vector to store element
     void element(Gboard& board1);
     void elementZombie(Gboard& board1);
     void elementAlien(Gboard& board1);
