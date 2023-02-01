@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+Please provide the YouTube link to your [Video Demo]([https://youtube.com](https://www.youtube.com/watch?v=h_CIQm3GT_4)).
 
 ## Minimum Requirements
 
@@ -10,9 +10,9 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 List all the features completed.
 
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Might be adding the dificulty, like easy,normal or hard if times allow
+2. 
+3. 
 
 ### To Do
 
@@ -31,21 +31,20 @@ List down the contribution of each group members.
 
 For example:
 
-### Tony Stark
+### Ku Ming Hin
 
-1. Randomly generate game board.
-2. *add more*
+1. Setting Configuration
+2. Game Board (work together)
 
-### Steve Rogers
+### Koh Tom Han
 
-1. Zombie movement and attack behaviour.
-2. *add more*
-
-### Dr. Strange
-
-1. Implement all game objects.
-2. *add more*
+1. Stat of the zombie
+2. Game Board (work together)
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+Problems:   - Biggest problem encountered is to bring value by parameters among the among the files.
+            - How to compile all the files together.
+
+Solutions:  - Refer back to lecture slide and recording / Find solution on youtube
+            - Search for the ways in google
