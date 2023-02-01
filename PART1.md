@@ -2,8 +2,8 @@
 
 ## Video Demo
 
-[Please provide the YouTube link to your [Video Demo](https://youtube.com]
-(https://www.youtube.com/watch?v=h_CIQm3GT_4).](https://youtube.com](https://www.youtube.com/watch?v=h_CIQm3GT_4)
+[Please provide the YouTube link to your]
+(https://www.youtube.com/watch?v=h_CIQm3GT_4).](https://www.youtube.com/watch?v=h_CIQm3GT_4)
 
 ## Minimum Requirements
 
