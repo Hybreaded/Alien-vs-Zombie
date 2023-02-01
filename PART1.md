@@ -3,7 +3,7 @@
 ## Video Demo
 
 [Please provide the YouTube link to your]
-(https://www.youtube.com/watch?v=h_CIQm3GT_4).](https://www.youtube.com/watch?v=h_CIQm3GT_4)
+[https://www.youtube.com/watch?v=h_CIQm3GT_4]
 
 ## Minimum Requirements
 
