@@ -11,16 +11,16 @@
 
 List all the features completed.
 
-1. Might be adding the dificulty, like easy,normal or hard if times allow
-2. 
-3. 
+1. Cool Feature #1
+2. Cool Feature #2
+3. *add more*
 
 ### To Do
 
 List all the features not yet done. Remove this section if there is no incomplete requirements.
 
-1. Cool Feature #1
-2. *add more*
+1. Might be adding the dificulty, like easy,normal or hard if times allow
+2. 
 
 ## Additional Features
 
