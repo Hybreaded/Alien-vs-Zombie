@@ -13,18 +13,53 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <cstring>
 using namespace std;
 
-void trylol(vector<int> &vec)
+class TRY
 {
-    vec[0] = vec[0] * 20;
-    vec[1] = vec[1] * 30;
+  public:
+  int test1;
+  void pass(TRY& trying);
+
+  private:
+
+};
+
+void TRY::pass(TRY& trying)
+{
+  cout << test1 << " ok";
 }
 
 int main()
 {
-    vector<int> v;
-    v[0]= 4; v[1]=2;
-    trylol(v);
-    cout << v[0] << " " << v[1] << endl;
+  srand(time(NULL));
+  /*TRY trying;
+  trying.test1 = 666;
+  trying.pass(trying);*/
+
+
+  char ans[5];
+  cout << "ans  ";
+  cin >> ans;
+  char arrow[] = "ARROW";
+  //ARROW
+
+  for (int i = 0; i < strlen(ans); ++i)
+  {
+    cout << "compare = " << strcmp(ans,arrow) <<endl;
+    cout << "char ans = " << ans[i] << " char arrow = "<< arrow[i]<<endl; 
+
+    if (strcmp(ans,arrow) != 0 || ans[i] != arrow[i])
+    {
+      cout << "Please enter correct characters (Arrow)"<< endl << endl;
+      std::system("pause");
+    }
+  }
+
+  
+  //char arrowZ[] = "ARROW";
+  
+  //cout << strcmp(arrowZ, arrow );
+  
 }

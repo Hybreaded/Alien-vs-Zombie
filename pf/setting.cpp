@@ -19,24 +19,23 @@ void Defaultdata::setting(Defaultdata& data1)
     
     cout << "DEFAULT GAME SETTING" << endl;
     cout << "--------------------" << endl;
-    defaultgamesetting(nrows_ , ncolumns_ , nzombies_); // call funtion to show the default setting
+    defaultgamesetting(nrows_ , ncolumns_ , nzombies_);
 
     char ans;
     cout << "Do you wish to change the game setting (y/n)?";
     cin >> ans; 
-    ans = toupper(ans); // change receive ans to upper letter
+    ans = toupper(ans); 
 
     pf::ClearScreen();
 
-    data1.nrows = nrows_; data1.ncolumns = ncolumns_; data1.nzombies = nzombies_; //assign default setting value into board1.
-
-    if(ans == 'Y') // if the user want to change value:
+    data1.nrows = nrows_; data1.ncolumns = ncolumns_; data1.nzombies = nzombies_; 
+    if(ans == 'Y') 
     {
-        int count1 = 1; // using loop here because, later, if user key in invalid value, we need to use "continue;" to repeat the loop
+        int count1 = 1;
         while(count1 > 0)
-        {   cout << "Please re-enter a valid range [Rows and Columns must be in ODD values]" << endl;
+        {   cout << "Board Setting\n------------" << endl;
             cout << "Enter rows (min: 3, max: 15) ==>  ";
-            cin >> data1.nrows; // the name with data.nrows will store the value under the Class Default data, data1;
+            cin >> data1.nrows; 
             cout << "Enter columns (min: 15, max: 29) ==>  ";
             cin >> data1.ncolumns; 
 
@@ -46,27 +45,27 @@ void Defaultdata::setting(Defaultdata& data1)
 
             if (data1.nrows > 2 && data1.nrows < 16 && data1.nrows %2 > 0
                 && data1.ncolumns > 14 && data1.ncolumns < 31 && data1.ncolumns %2 > 0
-                && data1.nzombies > 0 && data1.nzombies < 6)    // to check whether the user key in values are in odd number, and in between the range
+                && data1.nzombies > 0 && data1.nzombies < 6)   
             {
                     pf::ClearScreen();
-                    count1 = 0; // if yes, count1=0; the loop will end
+                    count1 = 0; 
             }
             else
             {
-                    cout << "Please re-enter a valid range" << endl; 
+                    cout << "Please re-enter a valid range [Rows and Columns must be in ODD values]" << endl; 
                     pf:: Pause();
                     pf::ClearScreen();
-                    continue; // if no, the user need to enter the value again.
+                    continue; 
             }
         }
-        cout << "Game setting has been updated" << endl; // after ending the loop, will tell user game setting has been change
+        cout << "Game setting has been updated" << endl; 
         pf::Pause();   
         pf::ClearScreen();
 
     }
-    else    //if user dw to change default setting, they will use the value of default setting
+    else    
     {
         pf::Pause();
         pf::ClearScreen();
     }
-} //back to main function
+} 

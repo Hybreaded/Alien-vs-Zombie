@@ -6,88 +6,102 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
-void Gameplay::displayAttributes(Gameplay& gameplay1)
+void Gameplay::displayAttributes(Gameplay &gameplay1)
 {
     for (int i = 0; i <= totalZombies; ++i)
     {
-        char symbol[]= {' ','>'};
+        char symbol[] = {' ', '>'};
         switch (i)
         {
         case 0:
-            cout << symbol[0] << "Alien" << "     :   " <<  "Life  "  << alienLife << ",  Attack   " <<  alienAtk << endl;
+            cout << symbol[0] << "Alien"
+                 << "     :   "
+                 << "Life  " << alienLife << ",  Attack   " << alienAtk << endl;
             break;
-        
+
         case 1:
-            cout << symbol[0] << "Zombie 1" << "  :   " <<  "Life  "  << zombie1Life << ",  Attack   " <<  zombie1Atk << endl;
+            cout << symbol[0] << "Zombie 1"
+                 << "  :   "
+                 << "Life  " << zombie1Life << ",  Attack   " << zombie1Atk << endl;
             break;
-        
+
         case 2:
-            cout << symbol[0] << "Zombie 2" << "  :   " <<  "Life  "  << zombie2Life << ",  Attack   " <<  zombie2Atk << endl;
+            cout << symbol[0] << "Zombie 2"
+                 << "  :   "
+                 << "Life  " << zombie2Life << ",  Attack   " << zombie2Atk << endl;
             break;
 
         case 3:
-            cout << symbol[0] << "Zombie 3" << "  :   " <<  "Life  "  << zombie3Life << ",  Attack   " <<  zombie3Atk << endl;
+            cout << symbol[0] << "Zombie 3"
+                 << "  :   "
+                 << "Life  " << zombie3Life << ",  Attack   " << zombie3Atk << endl;
             break;
 
         case 4:
-            cout << symbol[0] << "Zombie 4" << "  :   " <<  "Life  "  << zombie4Life << ",  Attack   " <<  zombie4Atk << endl;
+            cout << symbol[0] << "Zombie 4"
+                 << "  :   "
+                 << "Life  " << zombie4Life << ",  Attack   " << zombie4Atk << endl;
             break;
 
-        case 5: 
-            cout << symbol[0] << "Zombie 5" << "  :   " <<  "Life  "  << zombie5Life << ",  Attack   " <<  zombie5Atk << endl;
-            break;    
+        case 5:
+            cout << symbol[0] << "Zombie 5"
+                 << "  :   "
+                 << "Life  " << zombie5Life << ",  Attack   " << zombie5Atk << endl;
+            break;
         }
     }
-    cout << endl << endl;
+    cout << endl
+         << endl;
     command(gameplay1);
 }
 
-void Gameplay::displayBoard(Gameplay& gameplay1)
+void Gameplay::displayBoard(Gameplay &gameplay1)
 {
     int numofcharacter = 19;
-    int width = (((gameplay1.totalcolumns * 2)+1)-numofcharacter)/2; 
+    int width = (((gameplay1.totalcolumns * 2) + 1) - numofcharacter) / 2;
 
     string space = " ";
     cout << "  ";
-    for (int i = 0; i < width ; ++i)
+    for (int i = 0; i < width; ++i)
     {
         cout << space;
     }
-    cout << ".:Alien Vs Zombie:." <<endl;
+    cout << ".:Alien Vs Zombie:." << endl;
 
-    for (int y = gameplay1.totalrows; y > 0; --y) 
+    for (int y = gameplay1.totalrows; y > 0; --y)
     {
         int tempY = gameplay1.totalrows - y;
         cout << setw(4);
 
-        for (int x = 0; x < gameplay1.totalcolumns; ++x) 
+        for (int x = 0; x < gameplay1.totalcolumns; ++x)
         {
             cout << "+-";
         }
         cout << "+" << endl;
 
-        cout << setw(2) << (gameplay1.totalrows - y + 1); 
+        cout << setw(2) << (gameplay1.totalrows - y + 1);
 
         for (int x = 0; x < gameplay1.totalcolumns; ++x)
         {
             cout << "|" << gameplay1.game_[tempY][x];
         }
         cout << "|" << endl;
-    }    
+    }
 
-    cout << setw(4);  
-    for (int x = 0; x < gameplay1.totalcolumns; ++x) 
+    cout << setw(4);
+    for (int x = 0; x < gameplay1.totalcolumns; ++x)
     {
         cout << "+-";
     }
     cout << "+" << endl;
     cout << setw(3);
 
-    for (int x = 0; x < gameplay1.totalcolumns; ++x) 
+    for (int x = 0; x < gameplay1.totalcolumns; ++x)
     {
-        int num = ((x+1) / 10);
+        int num = ((x + 1) / 10);
         cout << " ";
         if (num == 0)
         {
@@ -99,9 +113,9 @@ void Gameplay::displayBoard(Gameplay& gameplay1)
         }
     }
     cout << endl;
-    cout << setw(3); 
-    
-    for (int x = 0; x < gameplay1.totalcolumns; ++x) 
+    cout << setw(3);
+
+    for (int x = 0; x < gameplay1.totalcolumns; ++x)
     {
         cout << " " << ((x + 1)) % 10;
     }
@@ -111,50 +125,52 @@ void Gameplay::displayBoard(Gameplay& gameplay1)
     displayAttributes(gameplay1);
 }
 
-void Gameplay::helpcommand(Gameplay& gameplay1)
+void Gameplay::helpcommand(Gameplay &gameplay1)
 {
-    cout                << endl;
-    cout << "Commands"  << endl;
-    cout << "1. up      - Move up"                              << endl;
-    cout << "2. down    - Move down"                            << endl;
-    cout << "3. left    - Move left"                            << endl;
-    cout << "4. right   - Move Right"                           << endl;
-    cout << "5. arrow   - Change the directions of the arrow"   << endl;
-    cout << "6. help    - Display the user commands"            << endl;
-    cout << "7. save    - Save the game"                        << endl;
-    cout << "8. load    - Load a game"                          << endl;
-    cout << "9. quit    - Quit the game"                        << endl;
-    
+    cout << endl;
+    cout << "Commands" << endl;
+    cout << "1. up      - Move up" << endl;
+    cout << "2. down    - Move down" << endl;
+    cout << "3. left    - Move left" << endl;
+    cout << "4. right   - Move Right" << endl;
+    cout << "5. arrow   - Change the directions of the arrow" << endl;
+    cout << "6. help    - Display the user commands" << endl;
+    cout << "7. save    - Save the game" << endl;
+    cout << "8. load    - Load a game" << endl;
+    cout << "9. quit    - Quit the game" << endl;
+
     pf::Pause();
     pf::ClearScreen();
     displayBoard(gameplay1);
 }
 
-void Gameplay::moveup(Gameplay& gameplay1)
+void Gameplay::moveup(Gameplay &gameplay1)
 {
-    for (int y = 0; y < gameplay1.totalrows; ++y) 
+    for (int y = 0; y < gameplay1.totalrows; ++y)
     {
-        for (int x = 0; x < gameplay1.totalcolumns; ++x) 
+        for (int x = 0; x < gameplay1.totalcolumns; ++x)
         {
             if (gameplay1.game_[y][x] == 'A')
-            {   
-                gameplay1.AlienRowPosition = y; gameplay1.AlienColumnPosition = x;
+            {
+                gameplay1.AlienRowPosition = y;
+                gameplay1.AlienColumnPosition = x;
                 break;
             }
         }
     }
 
-    int RowElement = gameplay1.AlienRowPosition - 1; int ColumnElement = gameplay1.AlienColumnPosition;
+    int RowElement = gameplay1.AlienRowPosition - 1;
+    int ColumnElement = gameplay1.AlienColumnPosition;
     Object object;
     if (gameplay1.game_[RowElement][ColumnElement] == 'h')
     {
         object.healthpack(gameplay1.alienLife);
     }
-    
+
     if (gameplay1.game_[RowElement][ColumnElement] == 'p')
     {
-        object.pod(/*gameplay1.game_*/ gameplay1.totalrows, gameplay1.totalcolumns, gameplay1.totalZombies, 
-                    gameplay1.zombie1Life, gameplay1.zombie2Life, gameplay1.zombie3Life, gameplay1.zombie4Life, gameplay1.zombie5Life);
+        object.pod(/*gameplay1.game_*/ gameplay1.totalrows, gameplay1.totalcolumns, gameplay1.totalZombies,
+                   gameplay1.zombie1Life, gameplay1.zombie2Life, gameplay1.zombie3Life, gameplay1.zombie4Life, gameplay1.zombie5Life);
     }
 
     if (gameplay1.game_[RowElement][ColumnElement] == 'r')
@@ -193,20 +209,43 @@ void Gameplay::moveup(Gameplay& gameplay1)
 
 void Gameplay::movedown()
 {
-
 }
 
 void Gameplay::moveleft()
 {
-
 }
 
 void Gameplay::moveright()
 {
-
 }
 
-void Gameplay::command(Gameplay& gameplay1)
+bool saveboard(Gameplay &board1)
+{
+    std::string fileName;
+
+    std::cout << "Enter the file name: ";
+    std::cin >> fileName;
+
+    std::ofstream outfile;
+    outfile.open(fileName);
+    outfile << board1;
+    outfile.close();
+}
+
+bool loadBoard(Gameplay &board1)
+{
+    std::string fileName;
+    
+    std::cout << "Enter the file name: ";
+    std::cin >> fileName;
+
+    std::ifstream infile;
+    infile.open(fileName);
+    infile >> board1;
+    infile.close();
+}
+
+void Gameplay::command(Gameplay &gameplay1)
 {
     char ans[10];
     cout << "command >";
@@ -222,5 +261,9 @@ void Gameplay::command(Gameplay& gameplay1)
     {
         moveup(gameplay1);
     }
-    
+
+    if (ans[0] == "S")
+    {
+        saveboard(gameplay1);
+    }
 }

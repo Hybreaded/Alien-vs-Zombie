@@ -5,12 +5,11 @@
 class Defaultdata
 {
     public :
-    //Defaultdata();
     void setting(Defaultdata& data1);
     int nrows, ncolumns, nzombies;
 
     private :
-    const int nrows_ = 3, ncolumns_ = 15, nzombies_ = 2; //const default setting
+    const int nrows_ = 3, ncolumns_ = 15, nzombies_ = 2; 
 };
 
 

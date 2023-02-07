@@ -2,26 +2,23 @@
 #include "setting.h"
 #include "gboard.h"
 #include "object.h"
-#include "gameplay.h"
+#include "gameplay1.h"
 #include "stat.h"
 using namespace std;
 
 void Stat::getstat(Stat& stat1) 
 {
-    //Create Array and assign stat of the zombie.
     int zombieLifeStat[] = {100,150,200,250,300}; 
     int zombieAtkStat[] = {5,10,15,20,25,30}; 
     int zombieRangeStat[] = {1,2,3,4,5};
     
-    //Generate random num for 0-4 to access the stat in the array.
     int random1 = rand() % 5; 
     int random2 = rand() % 5; 
     int random3 = rand() % 5; 
     int random4 = rand() % 5; 
     int random5 = rand() % 5;
 
-    //this loop will run base on total zombie, and assign random stat to the zombie every loop
-    for (int i = 1; i <= stat1.totalZombies; ++i)
+    for (int i = 1; i <= totalZombies; ++i)
     {
         switch (i)
         {
@@ -46,4 +43,5 @@ void Stat::getstat(Stat& stat1)
             break;    
         }
     }
+
 }
